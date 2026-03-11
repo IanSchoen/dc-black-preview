@@ -840,6 +840,8 @@
       border-radius: 8px;
       text-align: center;
       transition: border-color 0.2s;
+      position: relative;
+      overflow: hidden;
     }
 
     .leader-card:hover { border-color: var(--border-lt); }
@@ -853,6 +855,8 @@
       overflow: hidden;
     }
 
+    .leader-photo img { width: 100%; height: 100%; object-fit: cover; }
+
     .leader-name {
       font-size: 16px;
       font-weight: 700;
@@ -864,6 +868,39 @@
       font-size: 12px;
       color: var(--muted);
       letter-spacing: 0.04em;
+    }
+
+    /* Bio overlay on hover */
+    .leader-bio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(12,12,12,0.96);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+      border-radius: 8px;
+    }
+
+    .leader-card:hover .leader-bio-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .leader-bio-overlay .bio-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .leader-bio-overlay p {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--dim);
     }
 
     /* ── APPLY ── */
@@ -1368,56 +1405,87 @@
       <h2>Meet the DC Black Team</h2>
 
       <div class="leadership-grid">
+
         <div class="leader-card">
-          <div class="leader-photo"></div>
+          <div class="leader-photo"><img src="https://cdn.dynamitecircle.com/profiles/94ecf409-fdf4-46fe-ae72-056948dac50e.jpg" alt="Ian Schoen" /></div>
           <div class="leader-name">Ian</div>
           <div class="leader-role">Co-founder</div>
+          <div class="leader-bio-overlay">
+            <div class="bio-name">Ian Schoen</div>
+            <p>Ian is the co-host of the Tropical MBA podcast and co-founder of the Dynamite Circle. Since 2011 he has had a front row seat to many of the world's most successful online businesses through the DC. In 2023 he launched DC BLACK. Previously, he founded and exited an e-commerce and product manufacturing company.</p>
+          </div>
         </div>
+
         <div class="leader-card">
-          <div class="leader-photo"></div>
+          <div class="leader-photo"><img src="https://cdn.dynamitecircle.com/profiles/69d280a9-0bf6-4803-a108-7e58d6de39d0.jpg" alt="Clare Jacky" /></div>
           <div class="leader-name">Clare</div>
           <div class="leader-role">Facilitator</div>
+          <div class="leader-bio-overlay">
+            <div class="bio-name">Clare Jacky</div>
+            <p>Clare is an executive coach with hands-on experience developing and deploying business systems at scale. As Chief of Staff at Drip, Clare onboarded over 100 employees and led the restructuring of the engineering organization. She also built Rally's foundational strategic planning process.</p>
+          </div>
         </div>
+
         <div class="leader-card">
-          <div class="leader-photo"></div>
+          <div class="leader-photo"><img src="https://images.squarespace-cdn.com/content/v1/640f29bdee2a666b0a6379b1/8f3a5193-ccfd-483b-b61b-47325cefa1d9/Richard-Jalichandra-performance-marketing-2022.jpg" alt="Richard Jalichandra" /></div>
           <div class="leader-name">Richard</div>
           <div class="leader-role">Facilitator</div>
+          <div class="leader-bio-overlay">
+            <div class="bio-name">Richard Jalichandra</div>
+            <p>Richard is a seasoned technology executive with experience scaling companies in ad tech, e-commerce, mobile and SaaS. Throughout his career as a CEO, he has led teams worldwide that have generated billions in revenue. Previously Executive Chairman of Clickbank, CEO of bodybuilding.com, Mapmyfitness, and Technorati.</p>
+          </div>
         </div>
+
         <div class="leader-card">
-          <div class="leader-photo"></div>
+          <div class="leader-photo"><img src="https://images.squarespace-cdn.com/content/v1/640f29bdee2a666b0a6379b1/45bd395a-a113-419c-a643-e8f5a697a4e5/MarkBrenwall.jpg" alt="Mark Brenwall" /></div>
           <div class="leader-name">Mark</div>
           <div class="leader-role">Facilitator</div>
+          <div class="leader-bio-overlay">
+            <div class="bio-name">Mark Brenwall</div>
+            <p>Mark has been a DC member since 2013. He built a brand in the CrossFit space, going from zero to 7 figures in profit in under 7 years and selling for a mid-7-figure exit in 2021. Since exiting he's focused on investing in real estate and cash-flowing businesses.</p>
+          </div>
         </div>
+
+        <div class="leader-card">
+          <div class="leader-photo"><img src="https://images.squarespace-cdn.com/content/v1/640f29bdee2a666b0a6379b1/c99aa775-e80a-4dbe-9dd4-4aba7abf3e01/chris.jpg" alt="Chris Kobran" /></div>
+          <div class="leader-name">Chris</div>
+          <div class="leader-role">Facilitator</div>
+          <div class="leader-bio-overlay">
+            <div class="bio-name">Chris Kobran</div>
+            <p>Chris is a seasoned executive with more than two decades of leadership experience in gaming, media, music, B2B technology, transportation and sports. He founded The Headwall in Boston and led top clients including Harvard Business Review and Live Nation.</p>
+          </div>
+        </div>
+
         <div class="leader-card">
           <div class="leader-photo"></div>
           <div class="leader-name">Chris</div>
           <div class="leader-role">Facilitator</div>
         </div>
-        <div class="leader-card">
-          <div class="leader-photo"></div>
-          <div class="leader-name">Chris</div>
-          <div class="leader-role">Facilitator</div>
-        </div>
+
         <div class="leader-card">
           <div class="leader-photo"></div>
           <div class="leader-name">Dan</div>
           <div class="leader-role">Co-founder</div>
         </div>
+
         <div class="leader-card">
           <div class="leader-photo"></div>
           <div class="leader-name">Alex</div>
           <div class="leader-role">Community Manager</div>
         </div>
+
         <div class="leader-card">
           <div class="leader-photo"></div>
           <div class="leader-name">Beatriz</div>
           <div class="leader-role">Community</div>
         </div>
+
         <div class="leader-card">
           <div class="leader-photo"></div>
           <div class="leader-name">Lina</div>
           <div class="leader-role">Events Manager</div>
         </div>
+
       </div>
     </div>
   </section>
