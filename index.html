@@ -71,11 +71,11 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(12,12,12,0.92);
+      background: rgba(12,12,12,0.95);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
-      height: 68px;
+      height: 72px;
       display: flex;
       align-items: center;
     }
@@ -85,32 +85,78 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      gap: 32px;
     }
 
-    .nav-logo {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0 auto 0 48px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-links a.active { color: var(--white); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .nav-login {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-login:hover { color: var(--white); }
 
     .nav-cta {
       display: inline-block;
-      padding: 10px 24px;
+      padding: 9px 22px;
       background: var(--orange);
       color: var(--white);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       text-decoration: none;
       border: 2px solid var(--orange);
       border-radius: 300px;
       transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
     }
 
     .nav-cta:hover { background: transparent; color: var(--orange); }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+    }
 
     /* ── HERO ── */
     #hero {
@@ -895,27 +941,84 @@
     footer {
       background: #000000;
       border-top: 1px solid #1c1c1c;
-      padding: 32px 0;
     }
 
-    footer .container {
+    .footer-logo-band {
+      padding: 56px 0 48px;
+      text-align: center;
+      border-bottom: 1px solid #1c1c1c;
+    }
+
+    .footer-logo-band img {
+      height: 52px;
+      width: auto;
+      opacity: 0.85;
+    }
+
+    .footer-body {
+      padding: 40px 0 32px;
+    }
+
+    .footer-body .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid #1c1c1c;
+      padding: 20px 0;
+    }
+
+    .footer-bottom .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .footer-logo {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #444;
+    .footer-copy {
+      font-size: 11px;
+      color: #3a3a3a;
+      letter-spacing: 0.03em;
     }
 
-    .footer-note {
-      font-size: 12px;
-      color: #444;
+    .footer-legal {
+      display: flex;
+      gap: 20px;
     }
+
+    .footer-legal a {
+      font-size: 11px;
+      color: #3a3a3a;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-legal a:hover { color: #666; }
 
     /* ── DIVIDER ── */
     .divider {
@@ -930,8 +1033,19 @@
   <!-- NAV -->
   <nav>
     <div class="container">
-      <a href="#" class="nav-logo">DC Black</a>
-      <a href="#apply" class="nav-cta">Apply to join →</a>
+      <a href="https://dynamitecircle.com" class="nav-logo">
+        <img src="//images.squarespace-cdn.com/content/v1/640f29bdee2a666b0a6379b1/53a489f8-d8d6-4c06-ab7c-73b70d3672c8/dc-short-trans-bg.png?format=300w" alt="Dynamite Circle" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="https://dynamitecircle.com/dc-black" class="active">DC Black</a></li>
+        <li><a href="https://dynamitecircle.com/dcbkk">DCBKK</a></li>
+        <li><a href="https://dynamitecircle.com/dc-events">Events</a></li>
+        <li><a href="https://dynamitecircle.com/news-and-blog">News &amp; Blog</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://dc.dynamitecircle.com" class="nav-login">Login</a>
+        <a href="https://dc.dynamitecircle.com/account/apply?utm_medium=dc-navbar&utm_source=dc-site&utm_campaign=dc-site" class="nav-cta">Apply</a>
+      </div>
     </div>
   </nav>
 
@@ -1302,9 +1416,44 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <span class="footer-logo">DC Black</span>
-      <span class="footer-note">A Dynamite Circle membership · dynamitecircle.com</span>
+    <div class="footer-logo-band">
+      <img src="https://images.squarespace-cdn.com/content/v1/640f29bdee2a666b0a6379b1/09dc2d6a-8223-45d3-9dcb-85b83d79a8c4/logo_footer.png?format=500w" alt="Dynamite Circle" />
+    </div>
+    <div class="footer-body">
+      <div class="container">
+        <div class="footer-col">
+          <h4>Membership</h4>
+          <a href="https://dc.dynamitecircle.com/">Members Login</a>
+          <a href="https://dc.dynamitecircle.com/account/apply?utm_medium=dc-footer&utm_source=dc-site&utm_campaign=dc-site">Apply to Join</a>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="https://dynamitecircle.com/home">Dynamite Circle</a>
+          <a href="https://dynamitecircle.com/dc-black">DC Black</a>
+          <a href="https://dynamitecircle.com/dcbkk">DCBKK</a>
+          <a href="https://dynamitecircle.com/dc-events">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Dynamite Ventures</h4>
+          <a href="https://tropicalmba.com" target="_blank" rel="noopener">Tropical MBA</a>
+          <a href="https://dynamitejobs.com" target="_blank" rel="noopener">Dynamite Jobs</a>
+          <a href="https://remotefirstrecruiting.com" target="_blank" rel="noopener">Remote First Recruiting</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="https://dynamitecircle.com/community-code-of-conduct">Code of Conduct</a>
+          <a href="https://dynamitecircle.com/news-and-blog">News &amp; Blog</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span class="footer-copy">© Dynamite Circle. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="https://dynamitecircle.com/privacy-policy">Privacy Policy</a>
+          <a href="https://dynamitecircle.com/terms-of-service">Terms of Service</a>
+        </div>
+      </div>
     </div>
   </footer>
 
