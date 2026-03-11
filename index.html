@@ -907,6 +907,91 @@
       color: var(--dim);
     }
 
+    /* ── FAQ ── */
+    #faq {
+      padding: 96px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+      margin-top: 56px;
+    }
+
+    @media (max-width: 860px) { .faq-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+    .faq-label-col h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--white);
+      position: sticky;
+      top: 100px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      transition: color 0.15s;
+    }
+
+    .faq-question:hover { color: var(--orange); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid var(--border-lt);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--muted);
+      transition: transform 0.2s, border-color 0.2s;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 24px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--dim);
+      max-width: 680px;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
     /* ── APPLY ── */
     #apply {
       background-image:
@@ -1490,6 +1575,109 @@
           <div class="leader-role">Events Manager</div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <span class="section-label">FAQs</span>
+      <div class="faq-layout">
+        <div class="faq-label-col">
+          <h2>Common questions about DC Black.</h2>
+        </div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              What are the requirements for DC Black membership?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Minimum of $1,000,000 in annual business revenue (we will also consider recent large exits, raised rounds, or exceptional SDE #'s). For the right founders, we can return your investment many times over, with just a few hours each month dedicated to the community, conversations, events, and mastermind calls. If you're running a 7- or 8-figure business, joining DC Black is your next growth strategy.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              Why is the bar to entry set at $1M per year?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">DC Black was specifically designed to provide a community for founders who've experienced a higher level of growth. We understand that with more success comes different problems, different challenges, and different priorities. The only way to tackle those unique challenges is by forming meaningful relationships with other founders at that same level who understand where you're coming from and where you're going. $1 million is a natural number in our community, and an aspirational figure to founders who are hoping to join in the future.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              My business is on the higher end of DC Black's revenue threshold. Will this group still benefit me?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Yes! We'll match you to a mastermind with other founders at your level of growth so that you can connect with people who understand your unique journey. Members on the higher end still benefit from the conversations and in-person connections in DC Black. There's always something new to learn, and our members have a wealth of expertise and knowledge in a variety of industries, business tools, software, strategies, business tactics, and more.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              What does the application process look like?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Submit an application form, where you'll answer some questions about your business, your goals for the next 12 months, and who you are as an entrepreneur. Then you'll book a slot for a discovery call with Ian, our founder. If you qualify, we'll confirm the call time. We'll use the call to verify that you're the right fit and finalize your approval. We'll also ask for a signed P&L to ensure you meet the revenue requirement. Once approved, a facilitator will personally onboard you into the community and connect you with other members and resources that are best aligned with your goals.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              How is DC Black different from other high-level business communities?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Other communities limit their members by geography, industry, and even personal factors like age. DC Black is a global community of multicultural founders with interesting stories and businesses. We vet each and every application to not only look for fit in terms of revenue level, but also culture fit. No "gurus", flashy personalities, or vying to impress each other. Just genuine, helpful people who are serious about business — and also enjoy life outside of business through travel, lifestyle, and a slew of unique (and sometimes quirky) interests.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              How is DC Black different from Dynamite Circle? What is included in my membership?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">DC Black is an extension of your Dynamite Circle experience. You get the same events, network, connections, and community, but at an elevated level to match your goals and needs. DC Black members get access to all the features of Dynamite Circle, PLUS: paid DC Black-only events, VIP access at all-DC events in Mexico and Bangkok, monthly masterminds facilitated by experienced mentors, a DC Black-only WhatsApp group and private forum, and 1:1 coaching 3 times a year.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              What are DC Black events like? What's the cost?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">DC Black meets up three times a year in unique global locations for exclusive conversations, workshopping, and fun local activities. For 2025, we'll be connecting in Phuket (Q1), Barcelona (Q3), and New York City (Q4). At our all-DC events in Mexico (May) and Bangkok (October), we offer VIP DC Black programming and mastermind sessions. While members pay separately for events, we keep fees minimal by organizing them at cost — exceptional experiences at a fraction of what similar communities charge.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              What are masterminds? Who will be in my mastermind group?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Masterminds are monthly calls (2–2.5 hours long) led by an experienced facilitator. You'll be joined by 4–6 other DC Black members, grouped by specific interests and industries. Each participant has the chance to deliver a "Hot Seat" presentation once every third call, followed by feedback and challenging questions from the other participants and facilitator. This format fosters structured and targeted conversations to help you solve problems and make decisions faster.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              Can I join without being added to a mastermind?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">While masterminds can be an extremely valuable use of your time, they are not mandatory as we recognize they don't fit everybody's schedule or lifestyle. You can opt in for a membership without a mastermind.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              How much is an annual membership in DC Black?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">As of January 1, 2025, the annual membership is $5,500 with mastermind, or $4,500 without.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+              Can my business partner join DC Black?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Absolutely! Co-founders are eligible for a $1,000 discount if they join at the same time. If they join later, they will pay the current membership rate. Please note that all co-founders must go through the same application and vetting process and pay membership fees as individuals.</div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
